@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About">
+  <article class="about">
+    <header class="about-header">
+      <p class="meta">About</p>
+      <h1>The Story So Far</h1>
+    </header>
+
+    <div class="prose drop-cap">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is where your story goes
+        — not a bullet-point resume, but a real narrative. Who you are, what drives you, how
+        you got here. Write it like a magazine profile, because that's what this page is.
+      </p>
+
+      <p>
+        Talk about the things you care about outside of work. The books that shaped your
+        thinking, the cities that changed your perspective, the side projects that keep you up
+        at night. This is the personal side of the site, and it should feel like sitting down
+        for coffee with someone interesting.
+      </p>
+
+      <h2>What I'm Interested In</h2>
+
+      <p>
+        Use this section to talk about your intellectual interests, the problems you find
+        fascinating, the communities you're part of. This isn't a skills section — it's a
+        window into how you think.
+      </p>
+
+      <h2>Outside Work</h2>
+
+      <p>
+        Photography, cooking, running, reading, whatever makes you who you are beyond your
+        job title. Give people a reason to remember you as a person, not just a professional.
+      </p>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .about {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .about-header {
+    margin-bottom: 3rem;
+  }
+
+  .about-header .meta {
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .about-header h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+  }
+</style>

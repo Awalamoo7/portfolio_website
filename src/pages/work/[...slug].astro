@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const studies = await getCollection('work', ({ data }) => !data.draft);
+  return studies.map((study) => ({
+    params: { slug: study.id.replace(/\.md$/, '') },
+    props: { study },
+  }));
+}
+
+const { study } = Astro.props;
+const { Content } = await study.render();
+---
+
+<ArticleLayout
+  title={study.data.title}
+  subtitle={study.data.subtitle}
+  date={study.data.date}
+  tags={study.data.tags}
+  heroImage={study.data.heroImage}
+>
+  <Content />
+</ArticleLayout>

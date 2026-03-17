@@ -1,0 +1,90 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  date: Date;
+  tags?: string[];
+  heroImage?: string;
+}
+
+const { title, subtitle, date, tags, heroImage } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={title}>
+  <article class="article">
+    <header class="article-header">
+      <p class="meta">{formattedDate}</p>
+      <h1>{title}</h1>
+      {subtitle && <p class="article-subtitle">{subtitle}</p>}
+      {tags && tags.length > 0 && (
+        <div class="article-tags">
+          {tags.map((tag) => (
+            <span class="meta">{tag}</span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    {heroImage && (
+      <div class="article-hero">
+        <img src={heroImage} alt="" />
+      </div>
+    )}
+
+    <div class="prose drop-cap">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .article {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .article-header {
+    margin-bottom: 3rem;
+  }
+
+  .article-header .meta {
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .article-header h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 0.4em;
+  }
+
+  .article-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 1em;
+  }
+
+  .article-tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .article-hero {
+    margin-bottom: 3rem;
+  }
+
+  .article-hero img {
+    width: 100%;
+    height: auto;
+  }
+</style>

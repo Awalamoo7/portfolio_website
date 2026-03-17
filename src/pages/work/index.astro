@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const studies = (await getCollection('work', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Work">
+  <section class="page">
+    <header class="page-header">
+      <p class="meta">Professional</p>
+      <h1>Work</h1>
+    </header>
+
+    {studies.length === 0 ? (
+      <p class="empty">Nothing here yet. Check back soon.</p>
+    ) : (
+      <ul class="content-list">
+        {studies.map((study) => (
+          <li class="fade-in">
+            <a href={`/work/${study.id.replace(/\.md$/, '')}/`}>
+              <div class="title">{study.data.title}</div>
+              <div class="subtitle">{study.data.subtitle}</div>
+              <div class="meta">
+                {study.data.date.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+</BaseLayout>
+
+<style>
+  .page {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .page-header {
+    margin-bottom: 3rem;
+  }
+
+  .page-header .meta {
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .empty {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+</style>

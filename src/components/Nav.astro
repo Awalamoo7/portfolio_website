@@ -1,0 +1,110 @@
+---
+const pathname = Astro.url.pathname;
+
+function isActive(path: string): boolean {
+  if (path === '/') return pathname === '/';
+  return pathname.startsWith(path);
+}
+---
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-home">Portfolio</a>
+    <div class="nav-links">
+      <div class="nav-group">
+        <a href="/work/" class:list={[{ active: isActive('/work') }]}>Work</a>
+        <a href="/media/" class:list={[{ active: isActive('/media') }]}>Media</a>
+      </div>
+      <span class="nav-divider"></span>
+      <div class="nav-group">
+        <a href="/writing/" class:list={[{ active: isActive('/writing') }]}>Writing</a>
+        <a href="/about/" class:list={[{ active: isActive('/about') }]}>About</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-inner {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-home {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-home:hover {
+    color: var(--accent);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-group {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-divider {
+    width: 1px;
+    height: 16px;
+    background: var(--border);
+    margin: 0 0.75rem;
+  }
+
+  .nav-links a {
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: color 200ms ease;
+    padding: 0.25em 0;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--text);
+  }
+
+  @media (max-width: 600px) {
+    .nav-inner {
+      padding: 0 1rem;
+    }
+
+    .nav-group {
+      gap: 1rem;
+    }
+
+    .nav-divider {
+      margin: 0 0.4rem;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+    }
+  }
+</style>
