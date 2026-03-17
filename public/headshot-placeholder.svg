@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Background circle — warm charcoal to complement the site -->
+  <circle cx="200" cy="200" r="195" fill="#252525" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Neck -->
+  <rect x="170" y="272" width="60" height="38" rx="8" fill="#6F4E37"/>
+
+  <!-- Shoulders / shirt — dark with subtle collar -->
+  <ellipse cx="200" cy="365" rx="115" ry="58" fill="#2c2c2c"/>
+  <path d="M85,360 Q200,305 315,360" fill="#2c2c2c"/>
+  <!-- Collar detail -->
+  <path d="M170,310 L190,325 L200,318 L210,325 L230,310" stroke="#3a3a3a" stroke-width="2" fill="none"/>
+
+  <!-- Face -->
+  <ellipse cx="200" cy="198" rx="82" ry="96" fill="#6F4E37"/>
+
+  <!-- Beard - full, well-groomed -->
+  <path d="M128,225 Q128,310 200,322 Q272,310 272,225 Q258,245 200,250 Q142,245 128,225Z" fill="#1a1209"/>
+  <!-- Beard sides -->
+  <path d="M120,200 Q118,258 148,288 Q133,252 128,225Z" fill="#1a1209"/>
+  <path d="M280,200 Q282,258 252,288 Q267,252 272,225Z" fill="#1a1209"/>
+  <!-- Mustache -->
+  <path d="M162,228 Q182,220 200,224 Q218,220 238,228 Q218,236 200,234 Q182,236 162,228Z" fill="#0d0a04"/>
+  <!-- Beard texture lines -->
+  <path d="M165,270 Q168,285 172,295" stroke="#0d0a04" stroke-width="1" fill="none" opacity="0.3"/>
+  <path d="M200,260 Q200,290 200,315" stroke="#0d0a04" stroke-width="1" fill="none" opacity="0.3"/>
+  <path d="M235,270 Q232,285 228,295" stroke="#0d0a04" stroke-width="1" fill="none" opacity="0.3"/>
+
+  <!-- Eyes -->
+  <ellipse cx="170" cy="188" rx="13" ry="9" fill="white"/>
+  <ellipse cx="230" cy="188" rx="13" ry="9" fill="white"/>
+  <circle cx="172" cy="189" r="5.5" fill="#1a1a1a"/>
+  <circle cx="232" cy="189" r="5.5" fill="#1a1a1a"/>
+  <!-- Eye highlights -->
+  <circle cx="174" cy="187" r="2" fill="white"/>
+  <circle cx="234" cy="187" r="2" fill="white"/>
+
+  <!-- Eyebrows — clean, defined -->
+  <path d="M150,173 Q170,163 190,172" stroke="#1a1209" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M210,172 Q230,163 250,173" stroke="#1a1209" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Nose -->
+  <path d="M196,198 Q193,214 186,220 Q196,225 204,225 Q214,220 207,214 Q204,198 196,198" fill="#5E3F2B" opacity="0.5"/>
+
+  <!-- Ears -->
+  <ellipse cx="118" cy="198" rx="11" ry="17" fill="#6F4E37"/>
+  <ellipse cx="282" cy="198" rx="11" ry="17" fill="#6F4E37"/>
+  <!-- Inner ear -->
+  <ellipse cx="119" cy="198" rx="5" ry="10" fill="#5E3F2B" opacity="0.3"/>
+  <ellipse cx="281" cy="198" rx="5" ry="10" fill="#5E3F2B" opacity="0.3"/>
+
+  <!-- Cap — off-white / cream to complement the dark theme -->
+  <path d="M108,174 Q113,105 200,88 Q287,105 292,174 Q252,150 200,144 Q148,150 108,174Z" fill="#e8e4df"/>
+  <!-- Cap brim -->
+  <path d="M98,174 Q103,160 200,152 Q297,160 302,174 Q297,183 200,176 Q103,183 98,174Z" fill="#d4cfc8"/>
+  <!-- Cap seam -->
+  <path d="M200,88 L200,144" stroke="#d4cfc8" stroke-width="1.5" opacity="0.5"/>
+  <!-- Cap button -->
+  <circle cx="200" cy="88" r="4" fill="#d4cfc8"/>
+
+  <!-- Subtle warm smile visible above beard -->
+  <path d="M178,230 Q200,240 222,230" stroke="#5E3F2B" stroke-width="1.5" fill="none" opacity="0.35"/>
+</svg>

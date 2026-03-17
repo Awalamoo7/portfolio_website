@@ -4,7 +4,12 @@ const year = new Date().getFullYear();
 
 <footer class="footer">
   <div class="footer-inner">
-    <p class="meta">&copy; {year}</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/awal-amoo/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span class="footer-dot"></span>
+      <a href="https://github.com/Awalamoo7" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+    <p class="meta">&copy; {year} Awal Amoo</p>
   </div>
 </footer>
 
@@ -12,12 +17,47 @@ const year = new Date().getFullYear();
   .footer {
     border-top: 1px solid var(--border);
     padding: 2rem;
-    margin-top: 6rem;
+    margin-top: auto;
   }
 
   .footer-inner {
     max-width: 960px;
     margin: 0 auto;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .footer-links a {
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: color 200ms ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--accent);
+  }
+
+  .footer-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+
+  @media (max-width: 600px) {
+    .footer-inner {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
   }
 </style>

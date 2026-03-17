@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="195" fill="#2a2a2a" stroke="#333" stroke-width="2"/>
+
+  <!-- Neck -->
+  <rect x="165" y="270" width="70" height="40" rx="8" fill="#8B6914"/>
+
+  <!-- Shoulders / shirt -->
+  <ellipse cx="200" cy="360" rx="120" ry="60" fill="#3a3a3a"/>
+  <path d="M80,360 Q200,300 320,360" fill="#3a3a3a"/>
+
+  <!-- Face -->
+  <ellipse cx="200" cy="195" rx="85" ry="100" fill="#C68E17"/>
+
+  <!-- Beard - full beard covering jaw and chin -->
+  <path d="M125,220 Q125,310 200,320 Q275,310 275,220 Q260,240 200,245 Q140,240 125,220Z" fill="#2C1810"/>
+  <!-- Beard sides -->
+  <path d="M118,195 Q115,260 145,290 Q130,250 125,220Z" fill="#2C1810"/>
+  <path d="M282,195 Q285,260 255,290 Q270,250 275,220Z" fill="#2C1810"/>
+  <!-- Mustache -->
+  <path d="M160,225 Q180,218 200,222 Q220,218 240,225 Q220,232 200,230 Q180,232 160,225Z" fill="#1a0f08"/>
+
+  <!-- Eyes -->
+  <ellipse cx="168" cy="185" rx="14" ry="10" fill="white"/>
+  <ellipse cx="232" cy="185" rx="14" ry="10" fill="white"/>
+  <circle cx="170" cy="186" r="6" fill="#1a1a1a"/>
+  <circle cx="234" cy="186" r="6" fill="#1a1a1a"/>
+  <circle cx="172" cy="184" r="2" fill="white"/>
+  <circle cx="236" cy="184" r="2" fill="white"/>
+
+  <!-- Eyebrows -->
+  <path d="M148,170 Q168,160 188,168" stroke="#1a0f08" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M212,168 Q232,160 252,170" stroke="#1a0f08" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- Nose -->
+  <path d="M195,195 Q192,212 185,218 Q195,222 205,222 Q215,218 208,212 Q205,195 195,195" fill="#B07D12" opacity="0.6"/>
+
+  <!-- Ears -->
+  <ellipse cx="115" cy="195" rx="12" ry="18" fill="#C68E17"/>
+  <ellipse cx="285" cy="195" rx="12" ry="18" fill="#C68E17"/>
+
+  <!-- Cap -->
+  <path d="M105,170 Q110,100 200,85 Q290,100 295,170 Q250,145 200,140 Q150,145 105,170Z" fill="#c4453c"/>
+  <!-- Cap brim -->
+  <path d="M95,170 Q100,158 200,150 Q300,158 305,170 Q300,178 200,172 Q100,178 95,170Z" fill="#a83830"/>
+  <!-- Cap detail line -->
+  <path d="M200,85 L200,140" stroke="#a83830" stroke-width="2" opacity="0.5"/>
+
+  <!-- Smile line visible above beard -->
+  <path d="M175,228 Q200,238 225,228" stroke="#B07D12" stroke-width="2" fill="none" opacity="0.4"/>
+</svg>
