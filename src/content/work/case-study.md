@@ -1,13 +1,8 @@
 ---
 title: "Diagnosing a Broken Payment Funnel: Why 1 in 3 Transactions Was Failing"
-description: "A deep-dive into a card payment acceptance rate problem, where a 69.6% approval rate and $121M in declined volume pointed to structural problems hiding in plain sight inside the API integration."
+subtitle: "A deep-dive into a card payment acceptance rate problem, where a 69.6% approval rate and $121M in declined volume pointed to structural problems hiding in plain sight inside the API integration."
 date: 2026-03-25
-company: "Velo (moniker)"
-role: "Senior PM — Payment Product"
 tags: ["Product Management", "Payments", "Data Analysis", "Fintech", "Payroll"]
-tools: ["Python", "Excel", "Notion"]
-dataperiod: "Jan – Jun 2019"
-draft: false
 ---
 
 ## 01 — Background
