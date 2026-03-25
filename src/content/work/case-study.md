@@ -5,8 +5,6 @@ date: 2026-03-25
 tags: ["Product Management", "Payments", "Data Analysis", "Fintech", "Payroll"]
 ---
 
-## 01 — Background
-
 Velo is a global HRtech platform that allows companies to hire, pay, and manage employees and contractors across markets. A core part of Velo's product is the ability for clients to fund their accounts using credit and debit cards. A direct-to-account funding flow that sits at the very front of the payments experience.
 
 To process these transactions, Velo had partnered with Nexus Pay, a global payment processor capable of handling cards from multiple countries and settling funds in USD. Clients enter their card details inside the Velo web application; Velo's systems pass those credentials and transaction parameters to Nexus Pay via API, which returns a binary outcome: accepted or declined.
@@ -15,7 +13,7 @@ This flow sounds straightforward, but payments are rarely simple. The card fundi
 
 ---
 
-## 02 — The Problem
+## The Problem
 
 The payments team flagged that Velo's acceptance rate had been underperforming. The ask was to investigate: understand the scale of the problem, find out where and why it was happening, and come back with recommendations.
 
@@ -25,7 +23,7 @@ I was given three assets to work with: a transaction-level acceptance report cov
 
 ---
 
-## 03 — The Data
+## The Data
 
 Before drawing any conclusions, I needed to understand the shape and limits of the dataset.
 
@@ -51,7 +49,7 @@ This absence of decline codes is the single most important structural constraint
 
 ---
 
-## 04 — My Approach
+## My Approach
 
 Before I touched a single row of data, I read the API spec.
 
@@ -79,7 +77,7 @@ The highest-impact fix was also the cheapest.
 
 ---
 
-## 05 — The Numbers
+## The Numbers
 
 ### Overall picture
 
@@ -126,7 +124,7 @@ Two findings stand out immediately. First, US and UAE are the weakest performing
 
 ---
 
-## 06 — Key Findings
+## 06 Key Findings
 
 ### Finding 1 — CVV data is missing from 99.3% of transactions `HIGH CONFIDENCE`
 
@@ -166,7 +164,7 @@ Without retry attempt flags in the data, I cannot confirm this directly. However
 
 ---
 
-## 07 — Recommendations
+## Recommendations
 
 Prioritised by impact and sequenced by dependencies:
 
@@ -196,7 +194,7 @@ The 15–25pp gap to industry benchmark represents roughly **$80M+ in recoverabl
 
 ---
 
-## 08 — Communication
+## Communication
 
 One of the clearest lessons from payments work is that the same set of facts lands very differently depending on who you are talking to. I prepared two versions of this analysis, each structured for a different audience and a different desired outcome.
 
@@ -214,7 +212,7 @@ I also included my full analysis workings — the Python script and the Excel wo
 
 ---
 
-## 09 — Reflection
+## Reflection
 
 ### What worked
 
@@ -232,7 +230,7 @@ I also included my full analysis workings — the Python script and the Excel wo
 
 ---
 
-## 10 — Tools Used
+## Tools Used
 
 | Tool                            | Purpose                                                                                                    |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------- |
