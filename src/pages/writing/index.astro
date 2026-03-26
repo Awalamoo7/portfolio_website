@@ -17,21 +17,25 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
       <p class="empty">Nothing here yet. Check back soon.</p>
     ) : (
       <ul class="content-list">
-        {posts.map((post) => (
-          <li class="fade-in">
-            <a href={`/writing/${post.id.replace(/\.md$/, '')}/`}>
-              <div class="title">{post.data.title}</div>
-              {post.data.subtitle && <div class="subtitle">{post.data.subtitle}</div>}
-              <div class="meta">
-                {post.data.date.toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </div>
-            </a>
-          </li>
-        ))}
+        {posts.map((post) => {
+          const href = post.data.url || `/writing/${post.id}/`;
+          const isExternal = !!post.data.url;
+          return (
+            <li class="fade-in">
+              <a href={href} {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+                <div class="title">{post.data.title}{isExternal && <span class="external-icon" aria-label="external link"> ↗</span>}</div>
+                {post.data.subtitle && <div class="subtitle">{post.data.subtitle}</div>}
+                <div class="meta">
+                  {post.data.date.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </div>
+              </a>
+            </li>
+          );
+        })}
       </ul>
     )}
   </section>

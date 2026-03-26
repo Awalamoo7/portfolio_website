@@ -35,6 +35,10 @@
         "heroImage": {
           "type": "string"
         },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
         "draft": {
           "type": "boolean",
           "default": false

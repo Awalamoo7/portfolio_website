@@ -6,11 +6,11 @@ const appearances = (await getCollection('media'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<BaseLayout title="Media">
+<BaseLayout title="Projects">
   <section class="page">
     <header class="page-header">
       <p class="meta">Professional</p>
-      <h1>Media</h1>
+      <h1>Projects</h1>
     </header>
 
     {appearances.length === 0 ? (
