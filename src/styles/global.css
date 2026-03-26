@@ -155,8 +155,11 @@ a:hover {
    ============================================ */
 .prose {
   max-width: var(--max-width);
+  width: 100%;
   font-size: 1rem;
   line-height: 1.8;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .prose h2 {
@@ -208,6 +211,80 @@ a:hover {
   max-width: 100%;
   height: auto;
   margin: 2em 0;
+}
+
+/* Table wrapper — allows horizontal scroll on mobile */
+.prose .table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5em 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.prose table {
+  width: 100%;
+  min-width: 500px;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.prose thead {
+  background: var(--bg-elevated);
+}
+
+.prose th,
+.prose td {
+  padding: 0.7em 0.9em;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  white-space: normal;
+}
+
+.prose th {
+  font-weight: 600;
+  color: var(--text);
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.prose td {
+  color: var(--text-muted);
+}
+
+.prose tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.prose tbody tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.prose td strong,
+.prose td b {
+  color: var(--text);
+}
+
+@media (max-width: 600px) {
+  .prose table {
+    font-size: 0.75rem;
+  }
+
+  .prose th,
+  .prose td {
+    padding: 0.5em 0.6em;
+  }
+}
+
+.prose iframe,
+.prose video,
+.prose embed {
+  max-width: 100%;
 }
 
 .prose hr {

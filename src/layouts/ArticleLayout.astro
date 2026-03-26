@@ -43,13 +43,29 @@ const formattedDate = date.toLocaleDateString('en-US', {
       <slot />
     </div>
   </article>
+
+  <script>
+    function wrapTables() {
+      document.querySelectorAll('.prose table').forEach((table) => {
+        if (table.parentElement?.classList.contains('table-wrap')) return;
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-wrap';
+        table.parentNode?.insertBefore(wrapper, table);
+        wrapper.appendChild(table);
+      });
+    }
+    wrapTables();
+    document.addEventListener('astro:after-swap', wrapTables);
+  </script>
 </BaseLayout>
 
 <style>
   .article {
     max-width: var(--max-width);
+    width: 100%;
     margin: 0 auto;
     padding: 4rem 2rem 6rem;
+    overflow-x: hidden;
   }
 
   .article-header {
@@ -62,12 +78,14 @@ const formattedDate = date.toLocaleDateString('en-US', {
   }
 
   .article-header h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(1.8rem, 6vw, 4rem);
     margin-bottom: 0.4em;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .article-subtitle {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     color: var(--text-muted);
     line-height: 1.5;
     margin-bottom: 1em;
@@ -86,5 +104,17 @@ const formattedDate = date.toLocaleDateString('en-US', {
   .article-hero img {
     width: 100%;
     height: auto;
+  }
+
+  @media (max-width: 600px) {
+    .article {
+      padding: 2rem 1.25rem 4rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .article {
+      padding: 1.5rem 1rem 3rem;
+    }
   }
 </style>
